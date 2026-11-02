@@ -54,8 +54,11 @@ h2 em{color:var(--green)}
 .text-link{border-bottom:1px solid var(--gold);padding-bottom:2px}
 .hero-strip{position:absolute;left:0;right:0;bottom:0;margin:0;padding:18px 24px;list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;background:rgba(0,40,22,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,211,77,.35);font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold-text)}
 .hero-strip li+li::before{content:"·";margin-right:34px;color:#fff;opacity:.6}
-.hero-content>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-content>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) backwards}
 .hero-content>*:nth-child(2){animation-delay:.12s}.hero-content>*:nth-child(3){animation-delay:.24s}.hero-content>*:nth-child(4){animation-delay:.36s}
+.hero-eyebrow,.hero h1,.hero-lead,.hero-overlay{transition:opacity .9s ease}
+.hero.logo-on .hero-eyebrow,.hero.logo-on h1,.hero.logo-on .hero-lead{opacity:0}
+.hero.logo-on .hero-overlay{opacity:.2}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
 .intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:start}
@@ -113,6 +116,8 @@ h2 em{color:var(--green)}
 .footer-brand{font-family:'Playfair Display',serif;font-size:26px;color:#fff}
 .site-footer p{margin:8px 0 20px;letter-spacing:.14em;font-size:13px;color:var(--gold-text)}
 
+.site-footer .credit{margin:22px auto 0;padding-top:18px;max-width:420px;border-top:1px solid rgba(255,211,77,.3);font-size:14px;letter-spacing:normal;color:#e6efe9}
+.site-footer .credit strong{color:var(--gold-text);font-weight:700}
 .floating-whatsapp{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .music-toggle{font-family:'DM Sans',sans-serif;position:fixed;left:18px;bottom:18px;z-index:40;min-height:48px;padding:0 20px;border-radius:999px;border:1px solid var(--gold);background:var(--deep);color:#fff;font:700 15px 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .music-toggle[aria-pressed="true"]{background:var(--gold);color:#1d2a22}

@@ -11,9 +11,11 @@
   }
 
   // Portada: fachada y video de la pileta rotan solos; los puntos permiten elegir.
-  var slides=[].slice.call(document.querySelectorAll('.hero .slide')), dots=[].slice.call(document.querySelectorAll('.hero-dots button')), cur=0, timer;
+  var hero=document.querySelector('.hero'), logoT, slides=[].slice.call(document.querySelectorAll('.hero .slide')), dots=[].slice.call(document.querySelectorAll('.hero-dots button')), cur=0, timer;
   function show(k){
     cur=k;
+    clearTimeout(logoT); hero.classList.remove('logo-on');
+    if(slides[k].classList.contains('slide-video')) logoT=setTimeout(function(){ hero.classList.add('logo-on'); },2600);
     slides.forEach(function(s,i){
       s.classList.toggle('active',i===k);
       var v=s.querySelector('video');
