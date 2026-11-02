@@ -116,7 +116,9 @@ h2 em{color:var(--green)}
 .footer-brand{font-family:'Playfair Display',serif;font-size:26px;color:#fff}
 .site-footer p{margin:8px 0 20px;letter-spacing:.14em;font-size:13px;color:var(--gold-text)}
 
-.site-footer .credit{margin:22px auto 0;padding-top:18px;max-width:420px;border-top:1px solid rgba(255,211,77,.3);font-size:14px;letter-spacing:normal;color:#e6efe9}
+.site-footer .credit{margin:22px auto 0;padding-top:18px;max-width:560px;border-top:1px solid rgba(255,211,77,.3);font-size:14px;letter-spacing:normal;color:#e6efe9}
+.site-footer .credit-links{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 22px;margin-top:6px}
+.site-footer .credit-links a{display:inline-block;padding:8px 0;color:#fff;border-bottom:1px solid rgba(255,211,77,.5)}
 .site-footer .credit strong{color:var(--gold-text);font-weight:700}
 .floating-whatsapp{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .music-toggle{font-family:'DM Sans',sans-serif;position:fixed;left:18px;bottom:18px;z-index:40;min-height:48px;padding:0 20px;border-radius:999px;border:1px solid var(--gold);background:var(--deep);color:#fff;font:700 15px 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.28)}
