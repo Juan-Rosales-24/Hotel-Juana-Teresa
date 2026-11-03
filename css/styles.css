@@ -118,6 +118,8 @@ h2 em{color:var(--green)}
 
 .site-footer .credit{margin:18px auto 0;font-size:13px;letter-spacing:normal;color:rgba(230,239,233,.7)}
 .site-footer .credit a{display:inline-block;padding:8px 2px;color:var(--gold-text);font-weight:500;border-bottom:1px dotted rgba(255,211,77,.55)}
+.site-footer .visits{margin:10px 0 0;font-size:12px;letter-spacing:.04em;color:rgba(230,239,233,.6)}
+.site-footer .visits[hidden]{display:none}
 .floating-whatsapp{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .music-toggle{font-family:'DM Sans',sans-serif;position:fixed;left:18px;bottom:18px;z-index:40;min-height:48px;padding:0 20px;border-radius:999px;border:1px solid var(--gold);background:var(--deep);color:#fff;font:700 15px 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .music-toggle[aria-pressed="true"]{background:var(--gold);color:#1d2a22}

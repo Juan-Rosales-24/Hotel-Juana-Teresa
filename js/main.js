@@ -47,4 +47,23 @@
       v.addEventListener('play',function(){ if(!a.paused){ a.pause(); paint(false); } });
     });
   }
+
+  // Contador de visitas (desde cero, cuenta real). Se cuenta una vez por sesión.
+  // Para no contar tus propias visitas, abrí una vez la web con ?admin al final del link (y ?admin=0 para volver a contar).
+  (function(){
+    var box=document.getElementById('visits'), out=document.getElementById('visits-n');
+    if(!box||!out||!window.fetch) return;
+    var BASE='https://api.counterapi.dev/v1/vjt-7f3a9c2e1b/visitas';
+    var q=location.search.match(/[?&]admin=?([^&]*)/);
+    try{ if(q){ if(q[1]==='0') localStorage.removeItem('vjt-nocount'); else localStorage.setItem('vjt-nocount','1'); } }catch(e){}
+    var skip=false, counted=false;
+    try{ skip=localStorage.getItem('vjt-nocount')==='1'; counted=sessionStorage.getItem('vjt-counted')==='1'; }catch(e){}
+    var local=/^(localhost|127\.|)$/.test(location.hostname);
+    var url=(skip||counted||local)?BASE:BASE+'/up';
+    var ctl=window.AbortController?new AbortController():null, to=setTimeout(function(){ if(ctl) ctl.abort(); },6000);
+    fetch(url,ctl?{signal:ctl.signal}:{}).then(function(r){ return r.json(); }).then(function(d){
+      var n=(d&&(d.count!==undefined?d.count:d.value));
+      if(typeof n==='number'){ out.textContent=n.toLocaleString('es-AR'); box.hidden=false; try{ if(url!==BASE) sessionStorage.setItem('vjt-counted','1'); }catch(e){} }
+    }).catch(function(){}).then(function(){ clearTimeout(to); });
+  })();
 })();
