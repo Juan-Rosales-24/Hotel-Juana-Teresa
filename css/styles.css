@@ -141,4 +141,15 @@ h2 em{color:var(--green)}
   .hero-strip li+li::before{display:none}
   .hero-strip{gap:6px 18px;font-size:12px;letter-spacing:.12em}
 }
+/* Celular en vertical: el video se muestra completo arriba (el logo no se recorta) y el texto queda abajo */
+@media (max-aspect-ratio:1/1){
+  .hero{min-height:max(84vh,840px);align-items:flex-end}
+  .hero h1{font-size:clamp(32px,9vw,42px)}
+  .hero-content{padding:0 20px 140px}
+  .slide-video{background:var(--deep)}
+  .slide-video video{position:absolute;left:0;top:10px;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 78%,transparent 100%)}
+  .hero.logo-on .hero-eyebrow,.hero.logo-on h1,.hero.logo-on .hero-lead{opacity:1}
+  .music-toggle{min-height:44px;padding:0 16px;font-size:13px;left:12px;bottom:14px}
+  .floating-whatsapp{width:52px;height:52px;right:12px;bottom:14px}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-content>*{animation:none}}
